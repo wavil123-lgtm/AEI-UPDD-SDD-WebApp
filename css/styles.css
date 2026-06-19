@@ -1,0 +1,36 @@
+body {
+  font-family: Calibri, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.topbar {
+  background: #003D79;
+  color: white;
+  padding: 12px;
+}
+
+.topbar span {
+  color: #C6A300;
+}
+
+.container {
+  padding: 20px;
+}
+
+#projectCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 10px;
+}
+
+.card {
+  background: white;
+  padding: 12px;
+  border-left: 4px solid #003D79;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
