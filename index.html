@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>AEI UPDD / SDD Portal</title>
-
-<link rel="stylesheet" href="css/styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEI UPDD / SDD Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
+  <header class="topbar">
+    <button id="btnBack" class="hidden" type="button">← Dashboard</button>
+    <div class="brand">Asahi Europe & International <span>#digital</span> — UPDD / SDD Portal</div>
+  </header>
 
-<header class="topbar">
-  <button id="btnBack" onclick="showDashboard()">← Dashboard</button>
-  <div class="title">Asahi Europe & International <span>#digital</span></div>
-</header>
+  <section id="dashboard" class="page">
+    <div class="toolbar">
+      <h1>Project Portfolio <small id="projectCount"></small></h1>
+      <div class="toolbar-actions">
+        <input id="searchBox" placeholder="Search projects..." />
+        <button id="btnNewProject" type="button">+ New Project</button>
+      </div>
+    </div>
+    <div id="projectCards" class="cards"></div>
+  </section>
 
-<div id="dashboard" class="container">
-  <h2>Project Portfolio</h2>
+  <section id="projectView" class="hidden app-shell">
+    <aside id="sidebar" class="sidebar"></aside>
+    <main id="content" class="content"></main>
+  </section>
 
-  <div class="actions">
-    <input id="searchBox" placeholder="Search projects..." oninput="renderDashboard()">
-    <button onclick="openNewProject()">+ New Project</button>
+  <div id="newProjectModal" class="modal hidden">
+    <div class="modal-box">
+      <h2>Create New Project</h2>
+      <label>Project Name *</label><input id="np_name" />
+      <label>Project Number</label><input id="np_number" />
+      <label>Project Manager</label><input id="np_pm" />
+      <label>Business Sponsor</label><input id="np_sponsor" />
+      <div class="modal-actions">
+        <button id="btnCancelProject" type="button">Cancel</button>
+        <button id="btnCreateProject" type="button">Create</button>
+      </div>
+    </div>
   </div>
 
-  <div id="projectCards"></div>
-</div>
-
-<div id="projectView" class="hidden">
-  <aside id="sidebar"></aside>
-  <main id="content"></main>
-</div>
-
-<div id="newProjectModal" class="modal hidden">
-  <div class="modal-box">
-    <h3>Create Project</h3>
-    <input id="np_name" placeholder="Project name">
-    <button onclick="createProject()">Create</button>
-  </div>
-</div>
-
-<script src="js/data.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/sections.js"></script>
-<script src="js/app.js"></script>
-
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
